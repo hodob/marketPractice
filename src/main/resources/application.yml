@@ -1,0 +1,33 @@
+# local, dev, prod 공통 설정
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mariadb://jjjteam.duckdns.org:3306/marketPractice
+    username: root
+    password: JJJTeam
+  thymeleaf:
+    cache:  false
+# 프로파일 설정법  run config에서 spring.profiles.active=name1
+---
+
+spring:
+  config:
+    activate:
+      on-profile: sujin
+server:
+  port: 8082
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: name1
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: name2
