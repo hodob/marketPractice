@@ -16,40 +16,15 @@ public class UserController {
 	@Autowired private UserService userService;
 	
 	@GetMapping("/user/signInPage")
-	public String toLoginPage() throws Exception {
-		
-		try {
-			
-		} catch (Exception e) {
-			throw new Exception(e.getMessage()); 
-		}
-		
-		return "/user/signInPage";
-	}
+	public String toLoginPage() throws Exception {return "/user/signInPage";}
 	
 	@GetMapping("/user/signUpPage")
-	public String toSignUpPage() throws Exception {
-		
-		try {
-			
-		} catch (Exception e) {
-			throw new Exception(e.getMessage()); 
-		}
-		
-		return "/user/signUpPage";
-	}
+	public String toSignUpPage() throws Exception {	return "/user/signUpPage";}
+	
 	@PostMapping("/user/signUpProcess")
 	public String signUpProcess(UserDTO userDTO) throws Exception {
-		
-		try {
 			System.out.println(userDTO);
 			userService.signUp(userDTO);
-			
-
-		} catch (Exception e) {
-			throw new Exception(e.getMessage()); 
-		}
-		
 		return "/user/signUpPage";
 	}
 

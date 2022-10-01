@@ -8,8 +8,7 @@ import com.hodob.marketPractice.sql.UserSQL;
 
 @Mapper
 public interface UserMapper {
+	
 	 @InsertProvider(type = UserSQL.class, method = "UserSingUp")
-     public void UserSingUp(UserDTO userDTO);
-
-
+	 public void UserSingUp(UserDTO userDTO);
 }
