@@ -23,7 +23,7 @@ public class UserController {
 	
 	@PostMapping("/user/signUpProcess")
 	public String signUpProcess(UserDTO userDTO) throws Exception {
-			System.out.println(userDTO);
+			System.out.println(userDTO+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			userService.signUp(userDTO);
 		return "/user/signUpPage";
 	}

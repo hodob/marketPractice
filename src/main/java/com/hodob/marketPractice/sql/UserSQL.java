@@ -6,13 +6,13 @@ public class UserSQL {
 
 	public String UserSingUp(UserDTO userDTO) {        
         StringBuilder query = new StringBuilder();
-        query.append("insert into test values('");
-        if(userDTO.getId().equals(null)) {
+        query.append("insert into user (user_id,user_pw) values('");
+        if(userDTO.getUser_id().equals(null)) {
         	query.append("notID,");
         } else {
-        	query.append(userDTO.getId()+"','");
+        	query.append(userDTO.getUser_id()+"','");
         }
-        query.append(userDTO.getPw()+"')");
+        query.append(userDTO.getUser_pw()+"')");
         return query.toString();
 //       return "insert into test values('${id}','${pw}')"; 이 한줄로 실행해도 잘된다. 
     }
