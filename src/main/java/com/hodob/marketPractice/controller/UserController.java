@@ -8,13 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.hodob.marketPractice.dto.UserDTO;
 import com.hodob.marketPractice.service.UserService;
 
-
-
 @Controller
 public class UserController {
-	
-	 private final UserService userService;
-	 
+
+	private final UserService userService;
+
 	@Autowired
 	public UserController(UserService userService) {
 		super();
@@ -22,16 +20,27 @@ public class UserController {
 	}
 
 	@GetMapping("/user/signInPage")
-	public String toLoginPage() throws Exception {return "/user/signInPage";}
-	
+	public String toLoginPage() throws Exception {
+		return "/user/signInPage";
+	}
+
 	@GetMapping("/user/signUpPage")
-	public String toSignUpPage() throws Exception {	return "/user/signUpPage";}
-	
+	public String toSignUpPage() throws Exception {
+		return "/user/signUpPage";
+	}
+
 	@PostMapping("/user/signUpProcess")
 	public String signUpProcess(UserDTO userDTO) throws Exception {
-			System.out.println(userDTO+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			userService.signUp(userDTO);
+		userService.signUp(userDTO);
 		return "/user/signUpPage";
+	}
+
+	@PostMapping("/user/signInProcess")
+	public String signInProcess(UserDTO userDTO) throws Exception {
+		if (userService.signIn(userDTO) == 0)
+			return "/user/signInFailure";
+		else
+			return "/user/userPage/userPage";
 	}
 
 }

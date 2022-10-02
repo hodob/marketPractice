@@ -17,6 +17,10 @@ public class UserService {
 	}
 
 	public void signUp(UserDTO userDTO) {
-		mapper.UserSingUp(userDTO);
+		mapper.UserSignUp(userDTO);
+	}
+	
+	public int signIn(UserDTO userDTO) {
+		return mapper.UserSignIn(userDTO);
 	}
 }
