@@ -13,8 +13,14 @@ import com.hodob.marketPractice.service.UserService;
 @Controller
 public class UserController {
 	
-	@Autowired private UserService userService;
-	
+	 private final UserService userService;
+	 
+	@Autowired
+	public UserController(UserService userService) {
+		super();
+		this.userService = userService;
+	}
+
 	@GetMapping("/user/signInPage")
 	public String toLoginPage() throws Exception {return "/user/signInPage";}
 	

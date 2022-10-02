@@ -8,8 +8,15 @@ import com.hodob.marketPractice.mapper.UserMapper;
 
 @Service
 public class UserService {
-	 @Autowired UserMapper mapper;
-	   public void signUp(UserDTO userDTO) {
-	      mapper.UserSingUp(userDTO);
-	   }
+	private final UserMapper mapper;
+
+	@Autowired
+	public UserService(UserMapper mapper) {
+		super();
+		this.mapper = mapper;
+	}
+
+	public void signUp(UserDTO userDTO) {
+		mapper.UserSingUp(userDTO);
+	}
 }
