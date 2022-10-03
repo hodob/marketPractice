@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
     <h1 th:text="${message}">hello~!</h1>
-    <div th:if="${#authentication.expr('isAuthenticated()')}">
+<!--     <div th:if="${#authentication.expr('isAuthenticated()')}"> -->
         <h2 th:text="${#authentication.name}">Name</h2>
         <a href="/logout" th:href="@{/logout}">Logout</a>
-    </div>
-    <div th:unless="${#authentication.expr('isAuthenticated()')}">
-        <a href="/login" th:href="@{/login}">Login</a>
-    </div>
+<!--     </div> -->
+<!--     <div th:unless="${#authentication.expr('isAuthenticated()')}"> -->
+        <a href="/signin" th:href="@{/signin}">Login</a>
+<!--     </div> -->
+ <a href="/signup" th:href="@{/signup}">signup</a>
 </body>
 </html>

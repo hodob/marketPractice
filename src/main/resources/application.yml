@@ -6,11 +6,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-#  security:
-#    user:
-#      name: admin
-#      password: admin
-#      roles: ADMIN
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: ADMIN
   datasource:
     url: jdbc:mariadb://jjjteam.duckdns.org:3306/marketPractice
     username: root

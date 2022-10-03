@@ -28,8 +28,14 @@ public class SingUpController {
 
     @PostMapping("")
     public String processSingUp(@ModelAttribute Account account) {
+    	System.out.println(account+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    	System.out.println(account.getUsername());
+    	System.out.println(account.getPassword());
+    	
+
         account.setRole("USER");
         accountService.save(account);
+        System.out.println("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 
         return "redirect:/";
     }
