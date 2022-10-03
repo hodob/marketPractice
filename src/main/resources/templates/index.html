@@ -7,12 +7,12 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 </head>
 <body>
     <h1 th:text="${message}">hello~!</h1>
-    <div th:if="${#authentication.expr('isAuthenticated()')}">
+<!--     <div th:if="${#authentication.expr('isAuthenticated()')}"> -->
         <h2 th:text="${#authentication.name}">Name</h2>
         <a href="/logout" th:href="@{/logout}">Logout</a>
-    </div>
-    <div th:unless="${#authentication.expr('isAuthenticated()')}">
+<!--     </div> -->
+<!--     <div th:unless="${#authentication.expr('isAuthenticated()')}"> -->
         <a href="/login" th:href="@{/login}">Login</a>
-    </div>
+<!--     </div> -->
 </body>
 </html>
